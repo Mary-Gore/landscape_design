@@ -1,3 +1,4 @@
+import iconLocation from '../../icons/iconLocationFill.svg'
 const center = [55.68381882889063, 37.72960898280328];
 function init () {
   const map = new ymaps.Map('map-greenGarden', {
@@ -7,7 +8,7 @@ function init () {
 
     const placemark = new ymaps.Placemark(center, {}, {
       iconLayout: 'default#image',
-      iconImageHref: '../../icons/iconLocationFill.svg',
+      iconImageHref: iconLocation,
       iconImageSize: [32, 45],
       iconImageOffset: [0, -30]
     });
