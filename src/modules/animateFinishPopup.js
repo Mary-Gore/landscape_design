@@ -15,8 +15,6 @@ const animateFinishPopup = popup => {
           popup.classList.add('fadeIn');
         } else if (popup.dataset.typeAnimate === 'fadeIn') {
           popup.classList.remove('slideOutUp');
-          popup.classList.remove('popup-slide');
-          popup.classList.add('popup-fade');
           popup.classList.add('fadeIn');
         } 
       } else {
@@ -40,8 +38,6 @@ const animateFinishPopup = popup => {
         } else if (popup.dataset.typeAnimate === 'fadeIn') {
           popup.classList.add('slideOutUp');
           popup.classList.remove('fadeIn');
-          popup.classList.remove('popup-fade');
-          popup.classList.add('popup-slide');
         }
       } else {
         popup.classList.remove('show-mobile');

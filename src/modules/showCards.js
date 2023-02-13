@@ -78,7 +78,7 @@ const showCards = () => {
       card.classList.add('card-wrapper');
       card.innerHTML = `
        <div class="img-card">
-          <img src="/src/${cardItem.img}" alt="${cardItem.alt}">
+          <img src="${cardItem.img}" alt="${cardItem.alt}">
         </div>
         <div class="wrapper-card-titles">
           <div class="card-titles">

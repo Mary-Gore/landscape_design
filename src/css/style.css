@@ -230,7 +230,7 @@ input[type="date"]::-webkit-datetime-edit {
 .main {
   background: #021402;
   background: linear-gradient(96.96deg, rgba(0, 0, 0, 0.68) 4.69%, rgba(0, 0, 0, 0) 99.28%),
-    url("../img/imgBG.jpg") no-repeat;
+    url("../img/pics/imgBG.jpg") no-repeat;
   color: #fff;
 }
 
@@ -907,7 +907,7 @@ input[type="date"]::-webkit-datetime-edit {
 .feedback {
   background: #021402;
   background: linear-gradient(0deg, rgba(17, 29, 10, 0.69),
-      rgba(17, 29, 10, 0.69)), url("../img/phuket-1432886.jpg") no-repeat;
+      rgba(17, 29, 10, 0.69)), url("../img/pics/imgPhuket.jpg") no-repeat;
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -1109,7 +1109,7 @@ input[type="date"]::-webkit-datetime-edit {
   position: relative;
   background: #021402;
   background: linear-gradient(0deg, rgba(44, 56, 37, 0.74), rgba(44, 56, 37, 0.74)),
-    url("../img/imgGreenLeaves.jpg") no-repeat;
+    url("../img/pics/imgGreenLeaves.jpg") no-repeat;
   background-size: cover;
   width: 100%;
   padding: 70px 0 65px;
@@ -1663,8 +1663,9 @@ input[type="date"]::-webkit-datetime-edit {
 
 @media (min-width: 577px) and (max-width: 1299px) {
   .main {
+    background: #021402;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
-      url("../img/imgBG.jpg") no-repeat;
+      url("../img/pics/imgBG.jpg") no-repeat;
   }
 }
 
@@ -2491,7 +2492,7 @@ input[type="date"]::-webkit-datetime-edit {
 
   .main {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
-      url("../img/imgBG.jpg") no-repeat;
+      url("../img/pics/imgBG.jpg") no-repeat;
     background-position: 36% 50%;
   }
 
@@ -2514,7 +2515,7 @@ input[type="date"]::-webkit-datetime-edit {
   .main .navbar {
     background: #021402;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-      url("../img/imgBG.jpg");
+      url("../img/pics/imgBG.jpg");
     position: fixed;
     display: block;
     left: 0;

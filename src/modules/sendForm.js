@@ -1,4 +1,5 @@
 import animateFinishPopup from "./animateFinishPopup";
+import imgSpinner from "../icons/iconSpinnerAnimated.svg";
 
 const sendForm = formId => {
   const form = document.getElementById(formId),
@@ -198,7 +199,7 @@ const sendForm = formId => {
     btnSubmit.classList.add('disable');
     btnSubmit.disabled = true;
 
-    statusMessage.innerHTML = `<img class='img-preloader' src='./icons/iconSpinnerAnimated.svg'/>`;
+    statusMessage.innerHTML = `<img class='img-preloader' src='${imgSpinner}'/>`;
     statusMessage.style.textAlign = 'center';
     if (form.id !== 'feedback-form') {
       statusMessage.style.marginTop = '30px';
@@ -246,12 +247,15 @@ const sendForm = formId => {
           if (form.classList.contains('feedback-form')) {
             if (popup.classList.contains('finish-popup')) {
               popup.dataset.typeAnimate = 'slide';
+              popup.classList.add('popup-slide');
+             
             }
           } else {
             if (popup.classList.contains('finish-popup')) {
               popup.dataset.typeAnimate = 'fadeIn';
+              popup.classList.add('popup-fade');
             }
-          }
+          } 
           animateFinishPopup(popup);
           if (document.querySelector('.popup').classList.contains('open-prev')) {
             document.querySelector('.popup.open-prev').visibility = 'hidden';
