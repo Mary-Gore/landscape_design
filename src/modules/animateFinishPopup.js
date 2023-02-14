@@ -23,7 +23,6 @@ const animateFinishPopup = popup => {
         overlay.style.opacity = '1';
         overlay.style.visibility = 'visible';
       }
-
    };
 
   const closeFinishModal = e => {

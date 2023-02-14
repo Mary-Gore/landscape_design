@@ -257,11 +257,6 @@ const sendForm = formId => {
             }
           } 
           animateFinishPopup(popup);
-          if (document.querySelector('.popup').classList.contains('open-prev')) {
-            document.querySelector('.popup.open-prev').visibility = 'hidden';
-            document.querySelector('.popup.open-prev').opacity = '0';
-          };
-
           statusMessage.textContent = '';
           statusMessage.style.display = 'none';
         }

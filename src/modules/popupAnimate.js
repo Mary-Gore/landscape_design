@@ -32,7 +32,6 @@ const popupAnimate = () => {
       overlay.style.visibility = 'visible';
     }
 
-    popup.classList.add('open-prev');
 
     isOpen = true;
     return isOpen;
@@ -63,8 +62,6 @@ const popupAnimate = () => {
           overlay.style.opacity = '0';
           overlay.style.visibility = 'hidden';
         }
-
-        popup.classList.remove('open-prev');
       }
 
       if (window.innerWidth > 992) {
@@ -83,6 +80,7 @@ const popupAnimate = () => {
       modalShow(popup);
     });
   }
+
 
   for (let elem of dataClose) {
     elem.addEventListener('click', modalClose);
