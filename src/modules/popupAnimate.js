@@ -4,7 +4,8 @@ const popupAnimate = () => {
 
   const overlay = document.querySelector('.overlay'),
     popups = document.querySelectorAll('[data-type="simple"]'),
-    dataClose = document.querySelectorAll('[data-closed]');
+    dataClose = document.querySelectorAll('[data-closed]'),
+    forms = document.querySelectorAll('form');
 
   let isOpen = false;
 
@@ -12,6 +13,8 @@ const popupAnimate = () => {
     if (window.innerWidth > 992) {
       overlay.classList.remove('fadeOut');
       overlay.classList.add('fadeIn');
+
+      popup.style.display = 'block';
 
       if (popup.dataset.typeAnimate === 'slide') {
         popup.classList.remove('slideOutUp');
@@ -21,17 +24,14 @@ const popupAnimate = () => {
         popup.classList.add('fadeIn');
       } else if (popup.dataset.typeAnimate === 'fadeIn') {
         popup.classList.remove('slideOutUp');
-        popup.classList.remove('popup-slide');
-        popup.classList.add('popup-fade');
         popup.classList.add('fadeIn');
       }
     } else {
       popup.classList.remove('hide-mobile');
       popup.classList.add('show-mobile');
+      overlay.style.visibillity = 'visible';
       overlay.style.opacity = '1';
-      overlay.style.visibility = 'visible';
     }
-
 
     isOpen = true;
     return isOpen;
@@ -41,7 +41,7 @@ const popupAnimate = () => {
     //  Если открыто окно (isOpen === true) 
     // и если нет события нажатия клавиши, а клик по крестику
     // или нажата клавиша Esc (её код — 27).
-    if (isOpen && (e.type != 'keydown' || e.keyCode === 27)) {
+    if (isOpen && (e.type !== 'keydown' || e.keyCode === 27) && e.type !== 'submit') {
       for (let popup of popups) {
         if (window.innerWidth > 992) {
           if ((popup.dataset.typeAnimate === 'slide')) {
@@ -53,14 +53,12 @@ const popupAnimate = () => {
           } else if (popup.dataset.typeAnimate === 'fadeIn') {
             popup.classList.add('slideOutUp');
             popup.classList.remove('fadeIn');
-            popup.classList.remove('popup-fade');
-            popup.classList.add('popup-slide');
           }
         } else {
           popup.classList.remove('show-mobile');
           popup.classList.add('hide-mobile');
+          overlay.style.visibillity = 'hidden';
           overlay.style.opacity = '0';
-          overlay.style.visibility = 'hidden';
         }
       }
 
@@ -74,10 +72,22 @@ const popupAnimate = () => {
     }
   };
 
+  const checkPopup = popupClicked => {
+    for (let form of forms) {
+      form.addEventListener('submit', () => {
+        popupClicked.style.display = 'none';
+        isOpen = false;
+      });
+    }
+
+    return isOpen;
+  };
+
   for (let elem of dataPopupsBtns) {
     elem.addEventListener('click', () => {
       let popup = document.getElementById(elem.dataset.simplePopup);
       modalShow(popup);
+      checkPopup(popup);
     });
   }
 
