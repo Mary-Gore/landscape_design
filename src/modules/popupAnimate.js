@@ -7,14 +7,11 @@ const popupAnimate = () => {
     dataClose = document.querySelectorAll('[data-closed]'),
     forms = document.querySelectorAll('form');
 
-  let isOpen = false;
 
   const modalShow = popup => {
     if (window.innerWidth > 992) {
       overlay.classList.remove('fadeOut');
       overlay.classList.add('fadeIn');
-
-      popup.style.display = 'block';
 
       if (popup.dataset.typeAnimate === 'slide') {
         popup.classList.remove('slideOutUp');
@@ -30,63 +27,46 @@ const popupAnimate = () => {
       overlay.style.opacity = '1';
     }
 
-    isOpen = true;
-    return isOpen;
+    popup.classList.add('is-open');
   };
 
   const modalClose = e => {
     //  Если открыто окно (isOpen === true) 
     // и если нет события нажатия клавиши, а клик по крестику
     // или нажата клавиша Esc (её код — 27).
-    if (isOpen && (e.type !== 'keydown' || e.keyCode === 27)) {
-      for (let popup of popups) {
+    for (let popupElem of popups) {
+      if (popupElem.classList.contains('is-open') && (e.type !== 'keydown' || e.keyCode === 27)) {
         if (window.innerWidth > 992) {
-          if ((popup.dataset.typeAnimate === 'slide')) {
-            popup.classList.remove('slideInDown');
-            popup.classList.add('slideOutUp');
-          } else if (popup.dataset.typeAnimate === 'fadeInOut') {
-            popup.classList.remove('fadeIn');
-            popup.classList.add('fadeOut');
+          if ((popupElem.dataset.typeAnimate === 'slide')) {
+            popupElem.classList.remove('slideInDown');
+            popupElem.classList.add('slideOutUp');
+          } else if (popupElem.dataset.typeAnimate === 'fadeInOut') {
+            popupElem.classList.remove('fadeIn');
+            popupElem.classList.add('fadeOut');
           }
         } else {
-          popup.classList.remove('show-mobile');
-          popup.classList.add('hide-mobile');
+          popupElem.classList.remove('show-mobile');
+          popupElem.classList.add('hide-mobile');
           overlay.style.visibillity = 'hidden';
           overlay.style.opacity = '0';
         }
-      }
 
-      if (window.innerWidth > 992) {
-        overlay.classList.remove('fadeIn');
-        overlay.classList.add('fadeOut');
-      }
-
-      isOpen = false;
-      return isOpen;
-    }
-  };
-
-  const checkPopup = popupClicked => {
-    for (let form of forms) {
-      form.addEventListener('submit', () => {
-        if (form.classList.contains('successfull')) {
-          popupClicked.style.display = 'none';
-          isOpen = false;
+        if (window.innerWidth > 992) {
+          overlay.classList.remove('fadeIn');
+          overlay.classList.add('fadeOut');
         }
-      });
-    }
 
-    return isOpen;
+        popupElem.classList.remove('is-open');
+      }
+    }
   };
 
   for (let elem of dataPopupsBtns) {
     elem.addEventListener('click', () => {
       let popup = document.getElementById(elem.dataset.simplePopup);
       modalShow(popup);
-      checkPopup(popup);
     });
   }
-
 
   for (let elem of dataClose) {
     elem.addEventListener('click', modalClose);

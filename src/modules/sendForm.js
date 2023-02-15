@@ -1,6 +1,5 @@
 import animateFinishPopup from "./animateFinishPopup";
 import imgSpinner from "../icons/iconSpinnerAnimated.svg";
-import popupAnimate from "./popupAnimate";
 
 const sendForm = formId => {
   const form = document.getElementById(formId),
@@ -243,28 +242,25 @@ const sendForm = formId => {
             statusMessage.style.color = '#000';
           }
 
-         
           throw new Error('status network is not 200');
-        } else {
-          if (form.classList.contains('feedback-form')) {
-            if (popup.classList.contains('finish-popup')) {
-              popup.dataset.typeAnimate = 'slide';
-              popup.classList.add('popup-slide');
-            }
-          } else {
-            if (popup.classList.contains('finish-popup')) {
-              popup.dataset.typeAnimate = 'fadeInOut';
-              popup.classList.add('popup-fade');
-            }
+        } if (form.closest('#application-popup')) {
+          const parentElem = form.closest('#application-popup');
+          if (parentElem.dataset.typeAnimate === 'slide') {
+            parentElem.classList.remove('slideInDown');
+            parentElem.classList.remove('is-open');
           }
-
-          form.classList.add('successfull');
-          popupAnimate();
-          animateFinishPopup(popup);
-
-          statusMessage.textContent = '';
-          statusMessage.style.display = 'none';
+        } else if (form.closest('#callback-popup')) {
+          const parentElem = form.closest('#callback-popup');
+          if (parentElem.dataset.typeAnimate === 'slide') {
+            parentElem.classList.remove('slideInDown');
+            parentElem.classList.remove('is-open');
+          }
         }
+
+        animateFinishPopup(popup);
+
+        statusMessage.textContent = '';
+        statusMessage.style.display = 'none';
       })
       .catch(error => {
         console.error(error);
