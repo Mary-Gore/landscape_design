@@ -1,5 +1,6 @@
 import animateFinishPopup from "./animateFinishPopup";
 import imgSpinner from "../icons/iconSpinnerAnimated.svg";
+import popupAnimate from "./popupAnimate";
 
 const sendForm = formId => {
   const form = document.getElementById(formId),
@@ -213,7 +214,7 @@ const sendForm = formId => {
     });
 
     const postData = body => {
-      return fetch('server.php', {
+      return fetch('server4.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -242,6 +243,7 @@ const sendForm = formId => {
             statusMessage.style.color = '#000';
           }
 
+         
           throw new Error('status network is not 200');
         } else {
           if (form.classList.contains('feedback-form')) {
@@ -255,7 +257,11 @@ const sendForm = formId => {
               popup.classList.add('popup-fade');
             }
           }
+
+          form.classList.add('successfull');
+          popupAnimate();
           animateFinishPopup(popup);
+
           statusMessage.textContent = '';
           statusMessage.style.display = 'none';
         }

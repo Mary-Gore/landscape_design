@@ -22,7 +22,7 @@ const popupAnimate = () => {
       } else if (popup.dataset.typeAnimate === 'fadeInOut') {
         popup.classList.remove('fadeOut');
         popup.classList.add('fadeIn');
-      } 
+      }
     } else {
       popup.classList.remove('hide-mobile');
       popup.classList.add('show-mobile');
@@ -38,7 +38,7 @@ const popupAnimate = () => {
     //  Если открыто окно (isOpen === true) 
     // и если нет события нажатия клавиши, а клик по крестику
     // или нажата клавиша Esc (её код — 27).
-    if (isOpen && (e.type !== 'keydown' || e.keyCode === 27) && e.type !== 'submit') {
+    if (isOpen && (e.type !== 'keydown' || e.keyCode === 27)) {
       for (let popup of popups) {
         if (window.innerWidth > 992) {
           if ((popup.dataset.typeAnimate === 'slide')) {
@@ -47,7 +47,7 @@ const popupAnimate = () => {
           } else if (popup.dataset.typeAnimate === 'fadeInOut') {
             popup.classList.remove('fadeIn');
             popup.classList.add('fadeOut');
-          } 
+          }
         } else {
           popup.classList.remove('show-mobile');
           popup.classList.add('hide-mobile');
@@ -69,8 +69,10 @@ const popupAnimate = () => {
   const checkPopup = popupClicked => {
     for (let form of forms) {
       form.addEventListener('submit', () => {
-        popupClicked.style.display = 'none';
-        isOpen = false;
+        if (form.classList.contains('successfull')) {
+          popupClicked.style.display = 'none';
+          isOpen = false;
+        }
       });
     }
 
