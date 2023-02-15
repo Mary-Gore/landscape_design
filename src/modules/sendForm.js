@@ -214,7 +214,7 @@ const sendForm = formId => {
     });
 
     const postData = body => {
-      return fetch('server4.php', {
+      return fetch('server.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
