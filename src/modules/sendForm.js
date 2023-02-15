@@ -241,21 +241,20 @@ const sendForm = formId => {
           } else {
             statusMessage.style.color = '#000';
           }
-      
+
           throw new Error('status network is not 200');
         } else {
           if (form.classList.contains('feedback-form')) {
             if (popup.classList.contains('finish-popup')) {
               popup.dataset.typeAnimate = 'slide';
               popup.classList.add('popup-slide');
-             
             }
           } else {
             if (popup.classList.contains('finish-popup')) {
-              popup.dataset.typeAnimate = 'fadeIn';
+              popup.dataset.typeAnimate = 'fadeInOut';
               popup.classList.add('popup-fade');
             }
-          } 
+          }
           animateFinishPopup(popup);
           statusMessage.textContent = '';
           statusMessage.style.display = 'none';
