@@ -2438,10 +2438,6 @@ input[type="date"]::-webkit-datetime-edit {
     font-size: 24px;
   }
 
-  .popup .callback-content {
-    width: 100%;
-  }
-
   .popup .application-form .check-column {
     flex-direction: column;
   }
