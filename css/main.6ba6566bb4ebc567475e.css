@@ -492,7 +492,6 @@ input[type="date"]::-webkit-datetime-edit {
   padding-top: 106px;
 }
 
-.callback-popup .callback-content,
 .application-popup .application-content {
   flex-direction: column;
 }
