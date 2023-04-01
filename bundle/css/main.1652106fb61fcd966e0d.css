@@ -2407,7 +2407,6 @@ input[type="date"]::-webkit-datetime-edit {
   }
 
   .popup {
-    width: 100%;
     padding: 60px 15px 60px;
   }
 
