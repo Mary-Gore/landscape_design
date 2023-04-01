@@ -1735,7 +1735,7 @@ input[type="date"]::-webkit-datetime-edit {
     top: 30px;
     left: 50%;
     -webkit-transform: translate(-50%, 30px);
-    transform: translate(-50%, 30px);
+    transform: translate(-50%, 30px); 
     opacity: 1;
     visibility: visible;
   }
@@ -2415,9 +2415,7 @@ input[type="date"]::-webkit-datetime-edit {
 
   .popup.show-mobile {
     top: 15px;
-    left: 50%;
-    -webkit-transform: translate(-50%, 15px);
-    transform: translate(-50%, 15px);
+    left: 0;
     opacity: 1;
     visibility: visible;
   }
