@@ -33,6 +33,7 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 li a {
@@ -84,6 +85,7 @@ form .button.filled-btn.active {
 form .button.filled-btn.disable {
   background-color: #AADF89;
   border-color: #AADF89;
+  cursor: not-allowed;
 }
 
 form .input-wrapper {
@@ -113,6 +115,11 @@ form .green-checkbox+label {
 
 form .green-checkbox+label::before {
   margin-right: 15px;
+  cursor: pointer;
+}
+
+input[type="date"] {
+  cursor: pointer;
 }
 
 /* Стили для иконки у поля даты*/
@@ -137,6 +144,9 @@ input[type="date"]::-webkit-datetime-edit {
   left: 12px;
 }
 
+.button {
+  cursor: pointer;
+}
 
 .subtitle {
   font-weight: 500;
@@ -1733,7 +1743,7 @@ input[type="date"]::-webkit-datetime-edit {
     top: 30px;
     left: 50%;
     -webkit-transform: translate(-50%, 30px);
-    transform: translate(-50%, 30px); 
+    transform: translate(-50%, 30px);
     opacity: 1;
     visibility: visible;
   }
