@@ -49,7 +49,6 @@ const popupAnimate = () => {
           popupElem.classList.add('hide-mobile');
           overlay.style.visibility = 'hidden';
           overlay.style.opacity = '0';
-          console.log('!');
         }
 
         popupElem.classList.remove('is-open');

@@ -243,7 +243,9 @@ const sendForm = formId => {
           }
 
           throw new Error('status network is not 200');
-        } if (form.closest('#application-popup')) {
+        } 
+        
+          if (form.closest('#application-popup')) {
           const parentElem = form.closest('#application-popup');
           if (parentElem.dataset.typeAnimate === 'slide') {
             parentElem.classList.remove('slideInDown');
