@@ -1204,6 +1204,8 @@ h1,
 
 .footer hr {
   margin-top: 50px;
+  height: 1px;
+  width: 100%;
 }
 
 .footer .nav-second-footer {
@@ -1703,7 +1705,7 @@ h1,
     font-size: 30px;
   }
 
-  section:not(section.main, section.feedback, section.footer,
+  section:not(section.main, section.feedback, 
     section.contacts, section.tasks) {
     padding: 60px 0 0;
   }
