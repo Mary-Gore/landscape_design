@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap);
 @font-face {
   font-family: "Playfair Display";
   src:
-    url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
-    url("../fonts/PlayfairDisplay-Regular.woff") format("woff"),
-    url("../fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+    url(../fonts/PlayfairDisplay-Regular.woff2) format("woff2"),
+    url(../fonts/PlayfairDisplay-Regular.woff) format("woff"),
+    url(../fonts/PlayfairDisplay-Regular.ttf) format("truetype");
 }
 
 * {
@@ -116,7 +115,7 @@ form .green-checkbox+label::before {
 input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 1;
   display: block;
-  background: url("../icons/iconDate.svg") no-repeat;
+  background: url(../icons/iconDate.svg) no-repeat;
   width: 14px;
   height: 14px;
   position: absolute;
@@ -191,7 +190,7 @@ h1,
 
 .green-checkbox:checked+label::before {
   background-color: #55BE14;
-  background-image: url("data:image/svg+xml,%3Csvg width='7' height='6' viewBox='0 0 7 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M6.99835 1.05934L2.19915 5.48779L-0.000488281 3.45809L0.563418 2.93774L2.19915 4.44341L6.43444 0.539001L6.99835 1.05934Z' fill='white'/%3E %3C/svg%3E ");
+  background-image: url("data:image/svg+xml,%3Csvg width=%277%27 height=%276%27 viewBox=%270 0 7 6%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E %3Cpath d=%27M6.99835 1.05934L2.19915 5.48779L-0.000488281 3.45809L0.563418 2.93774L2.19915 4.44341L6.43444 0.539001L6.99835 1.05934Z%27 fill=%27white%27/%3E %3C/svg%3E");
 }
 
 .error-span {
@@ -240,7 +239,7 @@ h1,
 .main {
   background: #021402;
   background: linear-gradient(96.96deg, rgba(0, 0, 0, 0.68) 4.69%, rgba(0, 0, 0, 0) 99.28%),
-    url("../img/pics/imgBG.jpg") no-repeat;
+    url(../img/pics/imgBG.jpg) no-repeat;
   color: #fff;
 }
 
@@ -914,7 +913,7 @@ h1,
 .feedback {
   background: #021402;
   background: linear-gradient(0deg, rgba(17, 29, 10, 0.69),
-      rgba(17, 29, 10, 0.69)), url("../img/pics/imgPhuket.jpg") no-repeat;
+      rgba(17, 29, 10, 0.69)), url(../img/pics/imgPhuket.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -1116,7 +1115,7 @@ h1,
   position: relative;
   background: #021402;
   background: linear-gradient(0deg, rgba(44, 56, 37, 0.74), rgba(44, 56, 37, 0.74)),
-    url("../img/pics/imgGreenLeaves.jpg") no-repeat;
+    url(../img/pics/imgGreenLeaves.jpg) no-repeat;
   background-size: cover;
   width: 100%;
   padding: 70px 0 65px;
@@ -1295,13 +1294,13 @@ h1,
 }
 
 .contacts .work-time li:first-child::before {
-  content: url('../icons/iconLocation.svg');
+  content: url(../icons/iconLocation.svg);
   width: 22px;
   height: 30px;
 }
 
 .contacts .work-time li:nth-child(2)::before {
-  content: url('../icons/iconWhatsApp.svg');
+  content: url(../icons/iconWhatsApp.svg);
   width: 22px;
   height: 22px;
   top: 50%;
@@ -1310,7 +1309,7 @@ h1,
 }
 
 .contacts .work-time li:last-child::before {
-  content: url('../icons/iconClock.svg');
+  content: url(../icons/iconClock.svg);
   width: 22px;
   height: 22px;
 }
@@ -1674,7 +1673,7 @@ h1,
   .main {
     background: #021402;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
-      url("../img/pics/imgBG.jpg") no-repeat;
+      url(../img/pics/imgBG.jpg) no-repeat;
   }
 }
 
@@ -2494,7 +2493,7 @@ h1,
 
   .main {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
-      url("../img/pics/imgBG.jpg") no-repeat;
+      url(../img/pics/imgBG.jpg) no-repeat;
     background-position: 36% 50%;
   }
 
@@ -2517,7 +2516,7 @@ h1,
   .main .navbar {
     background: #021402;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-      url("../img/pics/imgBG.jpg");
+      url(../img/pics/imgBG.jpg);
     position: fixed;
     display: block;
     left: 0;

@@ -17,7 +17,7 @@ const sendForm = formId => {
   // Валидация
   const checkName = name => {
     const namePattern = /^[а-яё]+$/i;
-    name.value = name.value.replace(/\s*/gim, '');
+    name.value = name.value.replace(/\s*/gi, '');
     if (namePattern.test(name.value)) {
       const lowerName = name.value.toLowerCase();
       name.value = lowerName.replace(/(^[а-яё])/, match => match.toUpperCase());
@@ -27,7 +27,7 @@ const sendForm = formId => {
 
   const checkPhone = phone => {
     const phonePattern = /^((8|\+7)[\s-]?)?(\(?\d{3}\)?[\s-]?)(\d{3}[\s-]?)(\d{2}[\s-]?)\d{2}$/;
-    phone.value = phone.value.replace(/\s*/gim, '');
+    phone.value = phone.value.replace(/\s*/g, '');
     if (phonePattern.test(phone.value)) {
       return true;
     }
@@ -243,26 +243,24 @@ const sendForm = formId => {
           }
 
           throw new Error('status network is not 200');
-        } 
-        
+        } else {
+          statusMessage.textContent = '';
           if (form.closest('#application-popup')) {
-          const parentElem = form.closest('#application-popup');
-          if (parentElem.dataset.typeAnimate === 'slide') {
-            parentElem.classList.remove('slideInDown');
-            parentElem.classList.remove('is-open');
+            const parentElem = form.closest('#application-popup');
+            if (parentElem.dataset.typeAnimate === 'slide') {
+              parentElem.classList.remove('slideInDown');
+              parentElem.classList.remove('is-open');
+            }
+          } else if (form.closest('#callback-popup')) {
+            const parentElem = form.closest('#callback-popup');
+            if (parentElem.dataset.typeAnimate === 'slide') {
+              parentElem.classList.remove('slideInDown');
+              parentElem.classList.remove('is-open');
+            }
           }
-        } else if (form.closest('#callback-popup')) {
-          const parentElem = form.closest('#callback-popup');
-          if (parentElem.dataset.typeAnimate === 'slide') {
-            parentElem.classList.remove('slideInDown');
-            parentElem.classList.remove('is-open');
-          }
+
+          animateFinishPopup(popup);
         }
-
-        animateFinishPopup(popup);
-
-        statusMessage.textContent = '';
-        statusMessage.style.display = 'none';
       })
       .catch(error => {
         console.error(error);
