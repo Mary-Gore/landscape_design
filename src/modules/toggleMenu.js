@@ -19,6 +19,8 @@ const toggleMenu = () => {
         event.target.closest('.navbar')) {
       handlerMenu(event.target);
     }
+
+    document.body.classList.toggle('no-scroll');
   });
 };
 

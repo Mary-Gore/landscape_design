@@ -210,6 +210,10 @@ h1,
   height: 50px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1366px;
   padding: 0 30px;
